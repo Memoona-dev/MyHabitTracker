@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewHabit"
+    android:padding="16dp"
+    android:background="@color/white">
+
+    <!-- Back Button and Habit Name EditText in a horizontal line -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Back Button -->
+        <ImageButton
+            android:id="@+id/back_btn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/back_icon"
+            android:background="?attr/actionBarItemBackground"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"/>
+
+
+        <!-- Habit Name EditText -->
+        <EditText
+            android:id="@+id/habitNameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/back_btn"
+            android:layout_marginStart="16dp"
+            android:hint="Habit Name"
+            android:textColor="@color/black"
+            android:textColorHint="@android:color/black"
+            android:inputType="text"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    <!-- Main content area (excluding the button) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_above="@id/createNewHabitButton"
+        android:padding="16dp"
+        tools:ignore="NotSibling">
+
+        <!-- Container for the first pair of label and EditText -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="90dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="After I,"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:padding="12dp"/>
+
+            <EditText
+                android:id="@+id/afterhabitEditText"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:padding="8dp"
+                android:background="@drawable/rounded_edittext_background"
+                android:inputType="text"
+                android:textSize="22sp"
+                android:hint="Enter detail here"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <!-- Container for the second pair of label and EditText -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I Will,"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:padding="12dp"/>
+
+            <EditText
+                android:id="@+id/habitNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:padding="10dp"
+                android:background="@drawable/rounded_edittext_background"
+                android:inputType="text"
+                android:textSize="22sp"
+                android:hint="Enter detail here"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <!-- Instruction Text -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Click on days to remind:"
+            android:textSize="22sp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="start" />
+
+        <!-- HorizontalScrollView for Day Selection -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="horizontal">
+
+            <!-- LinearLayout for day selection -->
+            <LinearLayout
+                android:id="@+id/daysRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <!-- Days of the week -->
+                <TextView
+                    android:id="@+id/monday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/day_selector_rounded"
+                    android:padding="8dp"
+                    android:text="Mon"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tuesday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/day_selector_rounded"
+                    android:padding="8dp"
+                    android:text="Tue"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/wednesday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/day_selector_rounded"
+                    android:padding="8dp"
+                    android:text="Wed"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/thursday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/day_selector_rounded"
+                    android:padding="8dp"
+                    android:text="Thu"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/friday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/day_selector_rounded"
+                    android:padding="8dp"
+                    android:text="Fri"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/saturday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/day_selector_rounded"
+                    android:padding="8dp"
+                    android:text="Sat"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/sunday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/day_selector_rounded"
+                    android:padding="8dp"
+                    android:text="Sun"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </LinearLayout>
+
+    <!-- RelativeLayout for the button at the bottom -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/createNewHabitButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create New Habit"
+            android:padding="12dp"
+            android:textSize="18sp"
+            android:backgroundTint="@color/dayBackgroundColor"
+            android:textColor="@android:color/black" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "800357750939",
+    "firebase_url": "https://habittracker-9d56b-default-rtdb.firebaseio.com",
+    "project_id": "habittracker-9d56b",
+    "storage_bucket": "habittracker-9d56b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:800357750939:android:2115e371fbe195ba750e3e",
+        "android_client_info": {
+          "package_name": "com.app.myhabittracker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2-mJZWm_CO5tnWoKwyzevT5_yjsyHu50"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

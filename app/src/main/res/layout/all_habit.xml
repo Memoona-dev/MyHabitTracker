@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="0dp"
+    android:background="@color/white"
+    android:layout_marginHorizontal="5dp"
+    tools:context=".AllHabit"
+    android:id="@+id/main"
+    android:layout_margin="10dp"
+    tools:ignore="HardcodedText"
+    android:layout_marginVertical="5dp">
+
+
+
+    <!-- Back Button, Title, and Stats in a horizontal line -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <!-- Back Button -->
+        <ImageButton
+            android:id="@+id/back_btn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/back_icon"
+            android:background="?attr/actionBarItemBackground"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="Back" />
+
+        <!-- Title TextView (Current Habits) -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:text="All Habits"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/black"
+            android:layout_toEndOf="@id/back_btn"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"/>
+
+        <!-- Stats TextView (aligned to the right) -->
+        <TextView
+            android:id="@+id/stats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:padding="10dp"
+            android:background="@drawable/stats_border"
+            android:drawablePadding="4dp"
+            android:text="My stats"
+            android:textColor="@color/black"
+            app:drawableEndCompat="@drawable/bar_chart"
+            android:layout_centerVertical="true"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/dividerLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        android:layout_marginTop="8dp"
+
+        />
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="horizontal">
+
+        <!-- LinearLayout for day selection -->
+        <LinearLayout
+            android:id="@+id/daysRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="65dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <!-- Days of the week -->
+            <TextView
+                android:id="@+id/monday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:background="@drawable/rounded_edittext_background"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:text="Mon"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tuesday"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:background="@drawable/rounded_edittext_background"
+                android:padding="8dp"
+                android:text="Tue"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/wednesday"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:background="@drawable/rounded_edittext_background"
+                android:padding="8dp"
+                android:text="Wed"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/thursday"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:background="@drawable/rounded_edittext_background"
+                android:padding="8dp"
+                android:text="Thu"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/friday"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:background="@drawable/rounded_edittext_background"
+                android:padding="8dp"
+                android:text="Fri"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/saturday"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:background="@drawable/rounded_edittext_background"
+                android:padding="8dp"
+                android:text="Sat"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/sunday"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:background="@drawable/rounded_edittext_background"
+                android:padding="8dp"
+                android:text="Sun"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- RecyclerView for displaying the habit list -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/habitsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/horizontalScrollView"
+        android:padding="16dp"
+        android:layout_marginTop="16dp"
+        tools:listitem="@layout/item_habit" />
+
+
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomApp"
+        android:backgroundTint="@color/dayBackgroundColor"
+        android:layout_alignParentBottom="true"
+        tools:ignore="BottomAppBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <!-- (aligned to the left) -->
+            <TextView
+                android:id="@+id/homeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Today"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:drawableTop="@drawable/home"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <!-- (new button in the center) -->
+            <TextView
+                android:id="@+id/createButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:drawableTop="@drawable/create_new"
+                app:layout_constraintStart_toEndOf="@id/homeText"
+                app:layout_constraintEnd_toStartOf="@id/allHabitsText"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <!-- (aligned to the right) -->
+            <TextView
+                android:id="@+id/allHabitsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="All Habits"
+                android:textSize="14sp"
+                android:drawableTop="@drawable/check_mark"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+
+
+</RelativeLayout>

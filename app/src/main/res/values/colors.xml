@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey">#FFc2bac1</color>
+    <color name="light_blue">#219BCC</color>
+    <color name="purple">#787296</color>
+    <color name="dayBackgroundColor">#AB7D6F</color>
+    <color name="lite_purple">#959DC7</color>
+    <color name="selected_day_background">@color/design_default_color_secondary_variant</color> <!-- Yellow for selected -->
+    <color name="unselected_day_background">#FFA69DC1</color> <!-- White for unselected -->
+
+
+</resources>
